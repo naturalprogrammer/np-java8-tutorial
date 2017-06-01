@@ -11,9 +11,13 @@ public class App
 {
     public static void main( String[] args )
     {
-    	String prefix = "MR. ";
+    	final String prefix = "MR. ";
     	
-        System.out.println( process("Hello World!", prefix::concat) );
+        System.out.println( process("Hello World!", str -> {
+        	
+        	return prefix.concat(str);
+        }) );
+        
         System.out.println( process2("Hello World!", 5, String::substring));
     }
 
