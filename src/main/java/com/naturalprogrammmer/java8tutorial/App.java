@@ -24,12 +24,16 @@ public class App
         
         String[] names = {"Mr Sanjay", "Ms Trupti", "Dr John"};
 
-        Arrays.sort(names, Comparator.comparing(App::firstName).reversed()
+        Arrays.sort(names, Comparator.comparing(App::firstName).reversed().thenComparing(App::title)
 		);
         
         System.out.println(Arrays.toString(names));
     }
     
+    public static String title(String name) {
+    	return name.split(" ")[0];
+    }
+
     public static String firstName(String name) {
     	return name.split(" ")[1];
     }
